@@ -88,9 +88,8 @@ Learners should attempt each starter before reading the solution.
 |   `-- project-previews/
 |-- docs/
 |-- projects/
-|-- AGENTS.md
-|-- CLAUDE.md
 |-- CONTRIBUTING.md
+|-- MAINTAINER_GUIDE.md
 |-- README.md
 `-- ROADMAP.md
 ```

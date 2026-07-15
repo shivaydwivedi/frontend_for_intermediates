@@ -1,4 +1,4 @@
-# Agent Instructions
+# Maintainer Guide
 
 This repository is the intermediate frontend phase of a larger learning path:
 
@@ -6,11 +6,11 @@ This repository is the intermediate frontend phase of a larger learning path:
 Beginner frontend -> Intermediate frontend -> Beginner backend -> Full-stack development
 ```
 
-The repository contains, or will contain, 10 progressively challenging frontend projects. Do not implement a project unless the user explicitly asks for that project or task.
+The repository contains, or will contain, 10 progressively challenging frontend projects. Do not implement a project unless that project or task is explicitly in scope.
 
 ## Required Reading Before Editing
 
-Before making changes, every repository-aware agent must:
+Before making changes, contributors and maintainers should:
 
 1. Read this file.
 2. Read [README.md](README.md).
@@ -210,7 +210,7 @@ The solution must:
 - Avoid unnecessary abstraction.
 - Document important architectural decisions.
 
-## Required Final Report For Agent Work
+## Required Final Report For Repository Work
 
 When finishing a task, report:
 
@@ -219,4 +219,4 @@ When finishing a task, report:
 - Limitations or checks not performed.
 - Assumptions made.
 - Any decisions requiring user attention.
-- Confirmation that no commit or push occurred unless the user explicitly requested one.
+- Confirmation that no commit or push occurred unless one was explicitly requested.

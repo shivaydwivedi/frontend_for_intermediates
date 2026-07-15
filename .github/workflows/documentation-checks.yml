@@ -28,9 +28,8 @@ jobs:
           required=(
             "README.md"
             "ROADMAP.md"
-            "AGENTS.md"
-            "CLAUDE.md"
             "CONTRIBUTING.md"
+            "MAINTAINER_GUIDE.md"
             "docs/accessibility-standards.md"
             "docs/api-and-security-guidelines.md"
             "docs/architecture-guidelines.md"

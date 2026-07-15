@@ -35,7 +35,7 @@ Do not create identical starter and solution folders. Do not add starter comment
 
 ## Documentation
 
-Every project README must meet the standard in [AGENTS.md](../AGENTS.md). It should be educational without becoming a line-by-line answer key.
+Every project README must meet the standard in [MAINTAINER_GUIDE.md](../MAINTAINER_GUIDE.md). It should be educational without becoming a line-by-line answer key.
 
 ## Status Truthfulness
 
