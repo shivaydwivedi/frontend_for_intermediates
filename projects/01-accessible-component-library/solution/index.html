@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Component Library</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to component demos</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <p class="eyebrow">Project 01</p>
+        <h1>Accessible Component Library</h1>
+        <p>Reusable vanilla JavaScript components with documented semantics, keyboard behavior, focus handling, and cleanup.</p>
+        <nav class="disclosure-nav" data-component="disclosure-navigation" aria-label="Component sections">
+          <button class="disclosure-nav__toggle" type="button" data-nav-toggle aria-expanded="true" aria-controls="component-links">Browse components</button>
+          <div class="disclosure-nav__panel" id="component-links" data-nav-panel>
+            <ul>
+              <li><a href="#modal">Modal</a></li>
+              <li><a href="#tabs">Tabs</a></li>
+              <li><a href="#accordion">Accordion</a></li>
+              <li><a href="#menu">Menu button</a></li>
+              <li><a href="#toast">Toast</a></li>
+              <li><a href="#tooltip">Tooltip</a></li>
+              <li><a href="#combobox">Combobox</a></li>
+              <li><a href="#navigation">Disclosure nav</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="intro-title">
+        <p class="eyebrow">Documentation showcase</p>
+        <h2 id="intro-title">Eight focused components, one small interface.</h2>
+        <p>Each section includes a live demo, keyboard notes, accessibility decisions, and a compact usage example. The patterns follow APG guidance while preserving native HTML wherever it already does the job.</p>
+      </section>
+
+      <section class="component-section" id="modal" aria-labelledby="modal-title">
+        <h2 id="modal-title">Modal dialog</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <p>Use this modal to edit fictional display preferences. Focus is moved inside, trapped while open, and restored to the opener after closing.</p>
+            <button type="button" data-open-modal>Open preferences</button>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>Tab and Shift+Tab remain inside the dialog.</li>
+              <li>Escape and explicit close controls close it.</li>
+              <li>The opener receives focus after close when it still exists.</li>
+            </ul>
+            <pre><code>const modal = createModal(dialog);
+modal.open(button);</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="tabs" aria-labelledby="tabs-title">
+        <h2 id="tabs-title">Tabs</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="tabs" data-component="tabs">
+              <div class="tabs__list" role="tablist" aria-label="Component planning stages">
+                <button role="tab" id="tab-semantics" aria-controls="panel-semantics" aria-selected="true">Semantics</button>
+                <button role="tab" id="tab-state" aria-controls="panel-state" aria-selected="false">State</button>
+                <button role="tab" id="tab-tests" aria-controls="panel-tests" aria-selected="false">Tests</button>
+              </div>
+              <div class="tabs__panel" id="panel-semantics" role="tabpanel" tabindex="0" aria-labelledby="tab-semantics">
+                <p>Use roles only for the custom tab relationship. The buttons remain native buttons.</p>
+              </div>
+              <div class="tabs__panel" id="panel-state" role="tabpanel" tabindex="0" aria-labelledby="tab-state" hidden>
+                <p>Only the active tab is in the normal Tab sequence. Selection updates the panel.</p>
+              </div>
+              <div class="tabs__panel" id="panel-tests" role="tabpanel" tabindex="0" aria-labelledby="tab-tests" hidden>
+                <p>Tests cover roving tabindex, wrapping, activation, and panel visibility.</p>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>Left and Right arrows move focus.</li>
+              <li>Home and End move to the first and last tabs.</li>
+              <li>Enter or Space activates the focused tab.</li>
+            </ul>
+            <pre><code>const tabs = createTabs(root);
+tabs.select(1);</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="accordion" aria-labelledby="accordion-title">
+        <h2 id="accordion-title">Accordion</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="accordion" data-component="accordion">
+              <div class="accordion__item" data-accordion-item>
+                <h3 class="accordion__heading"><button class="accordion__button" type="button" aria-expanded="true" aria-controls="accordion-panel-1">Choose native controls first</button></h3>
+                <div class="accordion__panel" id="accordion-panel-1"><p>Headings contain buttons, so Enter and Space work without custom keyboard code.</p></div>
+              </div>
+              <div class="accordion__item" data-accordion-item>
+                <h3 class="accordion__heading"><button class="accordion__button" type="button" aria-expanded="false" aria-controls="accordion-panel-2">Synchronize state</button></h3>
+                <div class="accordion__panel" id="accordion-panel-2" hidden><p>The button's expanded state and panel visibility update together.</p></div>
+              </div>
+              <div class="accordion__item" data-accordion-item>
+                <h3 class="accordion__heading"><button class="accordion__button" type="button" aria-expanded="false" aria-controls="accordion-panel-3">Avoid extra landmarks</button></h3>
+                <div class="accordion__panel" id="accordion-panel-3" hidden><p>Panels are simple content containers here, so no extra region roles are needed.</p></div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>Enter and Space toggle through native button behavior.</li>
+              <li>Opening a panel does not move focus.</li>
+              <li>Multiple panels may be open.</li>
+            </ul>
+            <pre><code>const accordion = createAccordion(root);
+accordion.toggle(0);</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="menu" aria-labelledby="menu-title">
+        <h2 id="menu-title">Menu button</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="menu" data-component="menu-button">
+              <button type="button" data-menu-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="card-actions">Card actions</button>
+              <ul class="menu__popup" id="card-actions" role="menu" hidden>
+                <li role="none"><button type="button" role="menuitem">Duplicate item</button></li>
+                <li role="none"><button type="button" role="menuitem">Rename item</button></li>
+                <li role="none"><button type="button" role="menuitem">Archive item</button></li>
+              </ul>
+            </div>
+            <p class="status-message" data-menu-status aria-live="polite"></p>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>This is an action menu, not navigation.</li>
+              <li>Arrow keys move between actions.</li>
+              <li>Escape closes and restores focus.</li>
+            </ul>
+            <pre><code>const menu = createMenuButton(root);
+menu.open('first');</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="toast" aria-labelledby="toast-title">
+        <h2 id="toast-title">Toast notifications</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="button-row">
+              <button type="button" data-toast-demo="info" data-toast-message="Draft saved locally.">Show info</button>
+              <button type="button" data-toast-demo="success" data-toast-message="Component settings updated.">Show success</button>
+              <button type="button" data-toast-demo="error" data-toast-message="Unable to sync example data.">Show error</button>
+            </div>
+            <div class="toast-region" data-toast-region aria-label="Notifications"></div>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>Toasts do not steal focus.</li>
+              <li>Messages are rendered as text.</li>
+              <li>Error toasts use assertive announcement in this demo.</li>
+            </ul>
+            <pre><code>toastRegion.showToast('Saved', {
+  tone: 'success'
+});</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="tooltip" aria-labelledby="tooltip-title">
+        <h2 id="tooltip-title">Tooltip</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <span class="tooltip-demo" data-component="tooltip">
+              <button type="button" data-tooltip-trigger aria-describedby="tooltip-text">What is roving tabindex?</button>
+              <span class="tooltip" id="tooltip-text" role="tooltip" hidden>Only one item in a composite widget uses tabindex="0"; arrow keys move focus among the rest.</span>
+            </span>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>Focus and hover reveal the tooltip.</li>
+              <li>Escape hides it.</li>
+              <li>Tooltip content is supplemental, not required.</li>
+            </ul>
+            <pre><code>const tooltip = createTooltip(root);
+tooltip.show();</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="combobox" aria-labelledby="combobox-title">
+        <h2 id="combobox-title">Editable combobox</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="combobox" data-component="combobox">
+              <label for="technology-combobox">Favorite frontend technology</label>
+              <input id="technology-combobox" type="text" role="combobox" aria-expanded="false" aria-controls="technology-options" aria-autocomplete="list" autocomplete="off">
+              <ul class="combobox__list" id="technology-options" role="listbox" hidden></ul>
+              <p class="muted" data-combobox-status aria-live="polite"></p>
+            </div>
+            <p class="muted">Custom values are allowed. Suggestions use safe text rendering.</p>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>Typing filters suggestions case-insensitively.</li>
+              <li>Arrow keys move the active descendant while focus stays in the input.</li>
+              <li>Enter accepts the active suggestion; Escape closes the list.</li>
+            </ul>
+            <pre><code>const combobox = createCombobox(root, {
+  suggestions
+});</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="navigation" aria-labelledby="navigation-title">
+        <h2 id="navigation-title">Disclosure navigation</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <p>The page header uses the disclosure navigation component. Links remain ordinary links, and JavaScript only enhances the narrow-screen collapse behavior.</p>
+          </div>
+          <aside class="notes">
+            <h3>Keyboard and accessibility</h3>
+            <ul>
+              <li>The toggle is a native button.</li>
+              <li>Navigation is a semantic nav, not a menu widget.</li>
+              <li>Escape closes the narrow-screen disclosure.</li>
+            </ul>
+            <pre><code>const nav = createDisclosureNavigation(root);
+nav.sync();</code></pre>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="preferences-dialog" aria-labelledby="preferences-title" aria-describedby="preferences-description">
+      <form method="dialog" class="dialog__content">
+        <h2 id="preferences-title" data-modal-title>Display preferences</h2>
+        <p id="preferences-description">These fictional settings demonstrate focus management inside a modal dialog.</p>
+        <div class="field">
+          <label for="theme-select">Theme density</label>
+          <select id="theme-select">
+            <option>Comfortable</option>
+            <option>Compact</option>
+          </select>
+        </div>
+        <div class="dialog__actions">
+          <button type="button" data-modal-close>Cancel</button>
+          <button type="submit" data-modal-close>Save preferences</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>References: <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">WAI-ARIA Authoring Practices Guide</a> and <a href="https://developer.mozilla.org/">MDN Web Docs</a>.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

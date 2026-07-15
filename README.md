@@ -4,7 +4,7 @@ An intermediate frontend learning repository with 10 progressively challenging p
 
 This repository is for learners who already understand semantic HTML, modern CSS, responsive layouts, JavaScript fundamentals, DOM manipulation, form validation, localStorage, Fetch API basics, async/await, public API integration, accessible interactive interfaces, Git, and GitHub basics.
 
-Current progress: Day 0 foundation only. All projects are Planned. No project implementation, live demo, preview image, deployment, or application test suite exists yet.
+Current progress: Project 01 is complete. Projects 02-10 are Planned. No live demo, preview image, or deployment exists yet.
 
 ## Learning Path
 
@@ -44,7 +44,7 @@ By the end of the full repository, learners should be able to:
 
 | # | Project | Primary technologies | Major concepts | Status | Directory |
 |---|---|---|---|---|---|
-| 01 | Accessible Component Library | HTML, CSS, vanilla JS, ES modules, optional Vite | reusable components, public APIs, focus management, ARIA patterns, keyboard interaction | Planned | Not created |
+| 01 | Accessible Component Library | HTML, CSS, vanilla JS, ES modules, Vite, Vitest | reusable components, public APIs, focus management, ARIA patterns, keyboard interaction | Complete | [projects/01-accessible-component-library](projects/01-accessible-component-library/) |
 | 02 | Multi-Step Form | HTML, CSS, vanilla JS, ES modules, optional Vite | cross-step validation, form state, draft persistence, review flows, error summaries | Planned | Not created |
 | 03 | Product Explorer | Vanilla JS, ES modules, Fetch API, URL and History APIs, optional Vite | search, filters, pagination, deep linking, debouncing, request cancellation | Planned | Not created |
 | 04 | Expense Analytics Dashboard | JavaScript, ES modules, Vite, Chart.js or justified chart library, CSV processing | derived state, aggregation, charts, CSV import/export, accessible data summaries | Planned | Not created |

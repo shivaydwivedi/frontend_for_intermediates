@@ -1,0 +1,70 @@
+.hero {
+  padding-block: 2rem;
+}
+
+.hero__actions,
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.component-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block: 1rem 2rem;
+}
+
+.component-nav a {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: 0.55rem 0.75rem;
+  text-decoration: none;
+}
+
+.component-section {
+  border-top: 1px solid var(--color-border);
+  padding-block: 2rem;
+}
+
+.component-layout {
+  display: grid;
+  gap: var(--space);
+}
+
+@media (min-width: 58rem) {
+  .component-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  }
+}
+
+.demo,
+.notes {
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: var(--space);
+  box-shadow: 0 1px 0 rgba(23, 32, 51, 0.04);
+}
+
+.notes ul {
+  min-width: 0;
+  padding-left: 1.2rem;
+}
+
+.status-message {
+  min-height: 1.5rem;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.site-footer {
+  margin-top: 3rem;
+}
+
+.site-footer__inner {
+  padding-block: 1.5rem;
+}

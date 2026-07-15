@@ -1,0 +1,17 @@
+export const suggestions = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Vue',
+  'Angular',
+  'Svelte',
+  'Web Components',
+  'Node.js',
+  'Vite',
+  'Vitest',
+  'Playwright',
+  'Sass',
+  'Tailwind CSS',
+];

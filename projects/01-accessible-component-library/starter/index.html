@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Component Library Starter</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to component exercises</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <p class="eyebrow">Project 01 starter</p>
+        <h1>Accessible Component Library</h1>
+        <p>This starter provides semantic markup, styling, module boundaries, and TODO guidance. The component interactions are intentionally incomplete exercises.</p>
+        <nav class="disclosure-nav" data-component="disclosure-navigation" aria-label="Component exercises">
+          <button class="disclosure-nav__toggle" type="button" data-nav-toggle aria-expanded="true" aria-controls="component-links">Browse exercises</button>
+          <div class="disclosure-nav__panel" id="component-links" data-nav-panel>
+            <ul>
+              <li><a href="#modal">Modal</a></li>
+              <li><a href="#tabs">Tabs</a></li>
+              <li><a href="#accordion">Accordion</a></li>
+              <li><a href="#menu">Menu button</a></li>
+              <li><a href="#toast">Toast</a></li>
+              <li><a href="#tooltip">Tooltip</a></li>
+              <li><a href="#combobox">Combobox</a></li>
+              <li><a href="#navigation">Disclosure nav</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="intro-title">
+        <p class="eyebrow">Starter path</p>
+        <h2 id="intro-title">Implement one interaction pattern at a time.</h2>
+        <p>Recommended order: accordion, disclosure navigation, tabs, tooltip, toast, menu button, modal, combobox.</p>
+        <p class="exercise-note">Incomplete demos are marked as exercises. Do not treat this starter as a working component library yet.</p>
+      </section>
+
+      <section class="component-section" id="modal" aria-labelledby="modal-title">
+        <h2 id="modal-title">Modal dialog</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <p>Exercise: implement initial focus, focus trapping, Escape close, and focus restoration.</p>
+            <button type="button" data-open-modal>Open preferences</button>
+          </div>
+          <aside class="notes"><h3>TODO</h3><p>Complete <code>src/components/modal.js</code>.</p></aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="tabs" aria-labelledby="tabs-title">
+        <h2 id="tabs-title">Tabs</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="tabs" data-component="tabs">
+              <div class="tabs__list" role="tablist" aria-label="Component planning stages">
+                <button role="tab" id="tab-semantics" aria-controls="panel-semantics" aria-selected="true">Semantics</button>
+                <button role="tab" id="tab-state" aria-controls="panel-state" aria-selected="false">State</button>
+                <button role="tab" id="tab-tests" aria-controls="panel-tests" aria-selected="false">Tests</button>
+              </div>
+              <div class="tabs__panel" id="panel-semantics" role="tabpanel" tabindex="0" aria-labelledby="tab-semantics"><p>Exercise: make this tab set keyboard-operable.</p></div>
+              <div class="tabs__panel" id="panel-state" role="tabpanel" tabindex="0" aria-labelledby="tab-state" hidden><p>Synchronize selected state and panel visibility.</p></div>
+              <div class="tabs__panel" id="panel-tests" role="tabpanel" tabindex="0" aria-labelledby="tab-tests" hidden><p>Write tests after behavior exists.</p></div>
+            </div>
+          </div>
+          <aside class="notes"><h3>TODO</h3><p>Complete roving tabindex and manual activation.</p></aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="accordion" aria-labelledby="accordion-title">
+        <h2 id="accordion-title">Accordion</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="accordion" data-component="accordion">
+              <div class="accordion__item" data-accordion-item>
+                <h3 class="accordion__heading"><button class="accordion__button" type="button" aria-expanded="true" aria-controls="accordion-panel-1">Native controls</button></h3>
+                <div class="accordion__panel" id="accordion-panel-1"><p>Start here: button clicks should toggle panels.</p></div>
+              </div>
+              <div class="accordion__item" data-accordion-item>
+                <h3 class="accordion__heading"><button class="accordion__button" type="button" aria-expanded="false" aria-controls="accordion-panel-2">Synchronized state</button></h3>
+                <div class="accordion__panel" id="accordion-panel-2" hidden><p>Keep aria-expanded and hidden synchronized.</p></div>
+              </div>
+              <div class="accordion__item" data-accordion-item>
+                <h3 class="accordion__heading"><button class="accordion__button" type="button" aria-expanded="false" aria-controls="accordion-panel-3">Independent panels</button></h3>
+                <div class="accordion__panel" id="accordion-panel-3" hidden><p>Multiple sections may be open.</p></div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes"><h3>TODO</h3><p>Complete click handling and public methods.</p></aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="menu" aria-labelledby="menu-title">
+        <h2 id="menu-title">Menu button</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="menu" data-component="menu-button">
+              <button type="button" data-menu-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="card-actions">Card actions</button>
+              <ul class="menu__popup" id="card-actions" role="menu" hidden>
+                <li role="none"><button type="button" role="menuitem">Duplicate item</button></li>
+                <li role="none"><button type="button" role="menuitem">Rename item</button></li>
+                <li role="none"><button type="button" role="menuitem">Archive item</button></li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes"><h3>TODO</h3><p>Implement menu keyboard behavior and action selection.</p></aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="toast" aria-labelledby="toast-title">
+        <h2 id="toast-title">Toast notifications</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="button-row">
+              <button type="button" data-toast-demo="info" data-toast-message="Draft saved locally.">Show info</button>
+              <button type="button" data-toast-demo="success" data-toast-message="Component settings updated.">Show success</button>
+              <button type="button" data-toast-demo="error" data-toast-message="Unable to sync example data.">Show error</button>
+            </div>
+            <div class="toast-region" data-toast-region aria-label="Notifications"></div>
+          </div>
+          <aside class="notes"><h3>TODO</h3><p>Render dismissible, announced messages safely.</p></aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="tooltip" aria-labelledby="tooltip-title">
+        <h2 id="tooltip-title">Tooltip</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <span class="tooltip-demo" data-component="tooltip">
+              <button type="button" data-tooltip-trigger aria-describedby="tooltip-text">What is roving tabindex?</button>
+              <span class="tooltip" id="tooltip-text" role="tooltip" hidden>Only one item uses tabindex="0"; arrow keys move focus among the rest.</span>
+            </span>
+          </div>
+          <aside class="notes"><h3>TODO</h3><p>Show on focus and hover; hide on Escape.</p></aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="combobox" aria-labelledby="combobox-title">
+        <h2 id="combobox-title">Editable combobox</h2>
+        <div class="component-layout">
+          <div class="demo">
+            <div class="combobox" data-component="combobox">
+              <label for="technology-combobox">Favorite frontend technology</label>
+              <input id="technology-combobox" type="text" role="combobox" aria-expanded="false" aria-controls="technology-options" aria-autocomplete="list" autocomplete="off">
+              <ul class="combobox__list" id="technology-options" role="listbox" hidden></ul>
+              <p class="muted" data-combobox-status aria-live="polite"></p>
+            </div>
+          </div>
+          <aside class="notes"><h3>TODO</h3><p>Implement filtering, active descendant, selection, and cleanup.</p></aside>
+        </div>
+      </section>
+
+      <section class="component-section" id="navigation" aria-labelledby="navigation-title">
+        <h2 id="navigation-title">Disclosure navigation</h2>
+        <div class="component-layout">
+          <div class="demo"><p>Exercise: enhance the header navigation without changing link semantics.</p></div>
+          <aside class="notes"><h3>TODO</h3><p>Synchronize the disclosure state across viewport changes.</p></aside>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="preferences-dialog" aria-labelledby="preferences-title" aria-describedby="preferences-description">
+      <form method="dialog" class="dialog__content">
+        <h2 id="preferences-title" data-modal-title>Display preferences</h2>
+        <p id="preferences-description">Exercise modal content for focus management.</p>
+        <div class="field">
+          <label for="theme-select">Theme density</label>
+          <select id="theme-select"><option>Comfortable</option><option>Compact</option></select>
+        </div>
+        <div class="dialog__actions">
+          <button type="button" data-modal-close>Cancel</button>
+          <button type="submit" data-modal-close>Save preferences</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>References: <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">WAI-ARIA Authoring Practices Guide</a> and <a href="https://developer.mozilla.org/">MDN Web Docs</a>.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

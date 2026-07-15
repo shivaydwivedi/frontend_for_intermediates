@@ -1,0 +1,16 @@
+{
+  "name": "accessible-component-library-solution",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "jsdom": "29.1.1",
+    "vite": "8.1.4",
+    "vitest": "4.1.10"
+  }
+}

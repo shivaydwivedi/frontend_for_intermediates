@@ -2,13 +2,13 @@
 
 Status values: Planned, In Progress, Complete, Blocked.
 
-Current repository status: Day 0 foundation complete when this file and related documentation are verified. All 10 projects are Planned. The repository is not complete until the final audit and release milestones pass after Project 10.
+Current repository status: Project 01 is Complete. Projects 02-10 are Planned. The repository is not complete until the final audit and release milestones pass after Project 10.
 
 ## Project 01 - Accessible Component Library
 
-Status: Planned
+Status: Complete
 
-Technology: semantic HTML, modern CSS, vanilla JavaScript, ES modules, Vite only if tooling is justified.
+Technology: semantic HTML, modern CSS, vanilla JavaScript, ES modules, Vite, Vitest, jsdom.
 
 Prerequisites: semantic HTML, CSS layout, DOM events, modules, basic accessibility vocabulary.
 
@@ -38,7 +38,7 @@ Optional stretch goals: theme tokens, component playground, automated accessibil
 
 Relationship to previous projects: turns beginner DOM and accessibility work into reusable interactive patterns.
 
-Completion criteria: starter and solution exist, project README is complete, components meet required behavior, tests and manual checks are reported, root README and roadmap are updated truthfully.
+Completion criteria: starter and solution exist, project README is complete, components meet required behavior, automated tests pass, build checks pass, root README and roadmap are updated truthfully. Manual browser checks remain recommended before deployment or preview capture.
 
 ## Project 02 - Multi-Step Form
 

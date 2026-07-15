@@ -1,0 +1,249 @@
+.disclosure-nav {
+  margin-top: 1rem;
+}
+
+.disclosure-nav__toggle {
+  display: inline-flex;
+  align-items: center;
+}
+
+.disclosure-nav__panel ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.disclosure-nav__panel a {
+  display: block;
+  border-radius: var(--radius);
+  padding: 0.55rem 0.65rem;
+}
+
+@media (min-width: 48rem) {
+  .disclosure-nav__panel ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.tabs__list {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabs__list [role="tab"] {
+  border-color: var(--color-border);
+  border-bottom-color: transparent;
+  background: #eef4f7;
+  color: var(--color-ink);
+}
+
+.tabs__list [aria-selected="true"] {
+  background: var(--color-surface);
+  color: var(--color-accent-strong);
+  box-shadow: inset 0 -3px 0 var(--color-accent);
+}
+
+.tabs__panel {
+  min-width: 0;
+  padding-top: 1rem;
+}
+
+.accordion__item {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordion__heading {
+  margin: 0;
+}
+
+.accordion__button {
+  width: 100%;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-ink);
+  text-align: left;
+}
+
+.accordion__button::after {
+  content: "+";
+  float: right;
+  font-weight: 700;
+}
+
+.accordion__button[aria-expanded="true"]::after {
+  content: "-";
+}
+
+.accordion__panel {
+  padding: 0 0.75rem 1rem;
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu__popup {
+  position: absolute;
+  z-index: 3;
+  min-width: min(16rem, calc(100vw - 2rem));
+  margin: 0.4rem 0 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  list-style: none;
+  padding: 0.35rem;
+}
+
+.menu__popup button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  text-align: left;
+}
+
+.toast-region {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-inline-start: 0.4rem solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  padding: 0.8rem;
+}
+
+.toast--success {
+  border-inline-start-color: var(--color-success);
+}
+
+.toast--error {
+  border-inline-start-color: var(--color-error);
+}
+
+.toast p {
+  margin: 0;
+}
+
+.toast__dismiss {
+  min-height: auto;
+  border-color: var(--color-border);
+  background: #f3f6f9;
+  color: var(--color-ink);
+}
+
+.tooltip-demo {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  inset-block-start: calc(100% + 0.5rem);
+  inset-inline-start: 0;
+  z-index: 2;
+  width: min(18rem, calc(100vw - 2rem));
+  border-radius: var(--radius);
+  background: var(--color-ink);
+  color: #ffffff;
+  padding: 0.65rem 0.75rem;
+}
+
+.combobox {
+  position: relative;
+  max-width: 28rem;
+}
+
+.combobox label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.combobox input {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.75rem;
+}
+
+.combobox__list {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  max-height: 14rem;
+  overflow-y: auto;
+  margin: 0.35rem 0 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+  list-style: none;
+  padding: 0.35rem;
+}
+
+.combobox__list [role="option"],
+.combobox__empty {
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.55rem 0.65rem;
+}
+
+.combobox__list [aria-selected="true"] {
+  background: #d7efec;
+  color: var(--color-accent-strong);
+}
+
+dialog {
+  width: min(34rem, calc(100vw - 2rem));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0;
+}
+
+dialog::backdrop {
+  background: rgba(10, 18, 32, 0.52);
+}
+
+.dialog__content {
+  padding: var(--space);
+}
+
+.dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  margin-block: 1rem;
+}
+
+.field select {
+  min-height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.55rem;
+}
